@@ -1,22 +1,42 @@
 /* style.css */
+:root {
+  --bg-color: #f4f4f8;
+  --text-color: #333;
+  --item-bg: #fff;
+  --button-bg: #0066cc;
+  --button-hover: #0051a8;
+  --link-color: #0066cc;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e4e4e4;
+  --item-bg: #1e1e1e;
+  --button-bg: #3399ff;
+  --button-hover: #1a75d1;
+  --link-color: #66b3ff;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f8;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 main {
   max-width: 600px;
   width: 100%;
-  background: #fff;
+  background: var(--item-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
 }
 
 h1 {
@@ -37,17 +57,20 @@ select, button {
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  background-color: var(--item-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 button {
-  background-color: #0066cc;
+  background-color: var(--button-bg);
   color: #fff;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #0051a8;
+  background-color: var(--button-hover);
 }
 
 #articleDisplay {
@@ -66,7 +89,7 @@ button:hover {
 }
 
 #articleLink {
-  color: #0066cc;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -76,4 +99,23 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+#darkToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  z-index: 999;
+}
+
+#darkToggle:hover {
+  color: var(--link-color);
+  border-color: var(--link-color);
 }
