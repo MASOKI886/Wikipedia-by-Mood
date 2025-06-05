@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wikipedia by Mood</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="darkToggle">🌓 Dark Mode</button>
+  <main>
+    <h1>Wikipedia by Mood</h1>
+    <div class="mood-selector">
+      <label for="mood">How are you feeling?</label>
+      <select id="mood">
+        <option value="uplifting">😊 Uplifting</option>
+        <option value="nostalgic">🕰️ Nostalgic</option>
+        <option value="surreal">🌀 Surreal</option>
+        <option value="mysterious">🕵️‍♂️ Mysterious</option>
+        <option value="sad">😢 Sad</option>
+        <option value="funny">🤣 Funny</option>
+      </select>
+      <button id="fetchBtn">Show Me an Article</button>
+    </div>
+    <section id="articleDisplay" class="hidden">
+      <h2 id="articleTitle"></h2>
+      <p id="articleExtract"></p>
+      <a id="articleLink" href="#" target="_blank">Read more on Wikipedia →</a>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
