@@ -13,12 +13,13 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wikipedia by Mood</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+<title>Moodipedia</title>
+<meta name="keywords" content="mood, quotes, wikipedia, uplifting, nostalgic, mysterious, sad, funny, surreal" />
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="style.css" />
   
   <!-- Primary Meta Tags -->
-<meta name="title" content="Wikipedia by Mood – Discover Articles Based on Your Feelings">
+<meta name="title" content="Moodipedia – Discover Articles Based on Your Feelings">
 <meta name="description" content="Feeling curious, nostalgic, or funny? Let Wikipedia surprise you with articles that match your mood. No content creation needed. Just emotion and discovery.">
 
 <!-- Open Graph / Facebook -->
@@ -36,27 +37,36 @@
 <meta name="google-site-verification" content="EWL29YrZR0kssRiFA7ugxe9nwFgFExYUa0kGWnmQXag" />
 </head>
 <body>
-  <button id="darkToggle">🌓 Dark Mode</button>
-  <main>
-    <h1>Wikipedia by Mood</h1>
-    <div class="mood-selector">
-      <label for="mood">How are you feeling?</label>
-      <select id="mood">
-        <option value="uplifting">😊 Uplifting</option>
-        <option value="nostalgic">🕰️ Nostalgic</option>
-        <option value="surreal">🌀 Surreal</option>
-        <option value="mysterious">🕵️‍♂️ Mysterious</option>
-        <option value="sad">😢 Sad</option>
-        <option value="funny">🤣 Funny</option>
-      </select>
-      <button id="fetchBtn">Show Me an Article</button>
-    </div>
-    <section id="articleDisplay" class="hidden">
-      <h2 id="articleTitle"></h2>
-      <p id="articleExtract"></p>
-      <a id="articleLink" href="#" target="_blank">Read more on Wikipedia →</a>
-    </section>
-  </main>
-  <script src="script.js"></script>
+<button id="darkToggle" aria-label="Toggle dark mode">🌓 Dark Mode</button>
+
+<main>
+  <h1>Moodipedia</h1>
+  <div class="mood-selector">
+    <label for="moodSelect">Choose your mood:</label>
+    <select id="moodSelect" aria-label="Mood selector">
+      <option value="">-- Select a mood --</option>
+      <option value="uplifting">Uplifting</option>
+      <option value="nostalgic">Nostalgic</option>
+      <option value="surreal">Surreal</option>
+      <option value="mysterious">Mysterious</option>
+      <option value="sad">Sad</option>
+      <option value="funny">Funny</option>
+    </select>
+    <button id="getArticleBtn" disabled>Get Article & Quotes</button>
+  </div>
+
+  <section id="articleDisplay" class="hidden" aria-live="polite" aria-atomic="true">
+    <h2 id="articleTitle"></h2>
+    <p id="articleExtract"></p>
+    <a href="#" id="articleLink" target="_blank" rel="noopener noreferrer">Read full article on Wikipedia</a>
+  </section>
+
+  <section id="quotesDisplay" class="hidden" aria-live="polite" aria-atomic="true">
+    <h3>Famous Quotes on this Mood</h3>
+    <ul id="quotesList"></ul>
+  </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
