@@ -44,8 +44,6 @@ fetchBtn.addEventListener("click", async () => {
 });
 
 // Dark mode toggle
-if (darkToggle) {
-  darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-}
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
